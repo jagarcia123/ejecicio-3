@@ -1,0 +1,33 @@
+#include <iostream>
+
+int main() {
+    int tiempoAtleta1Minutos, tiempoAtleta1Segundos;
+    int tiempoAtleta2Minutos, tiempoAtleta2Segundos;
+
+    // Ingresa los tiempos del Atleta 1 en minutos y segundos
+    std::cout << "Ingresa el tiempo del Atleta 1 en minutos y segundos:" << std::endl;
+    std::cout << "Minutos: ";
+    std::cin >> tiempoAtleta1Minutos;
+    std::cout << "Segundos: ";
+    std::cin >> tiempoAtleta1Segundos;
+
+
+    std::cout << "Ingresa el tiempo del Atleta 2 en minutos y segundos:" << std::endl;
+    std::cout << "Minutos: ";
+    std::cin >> tiempoAtleta2Minutos;
+    std::cout << "Segundos: ";
+    std::cin >> tiempoAtleta2Segundos;
+
+    int tiempoTotalSegundos = tiempoAtleta1Minutos * 60 + tiempoAtleta1Segundos +
+                               tiempoAtleta2Minutos * 60 + tiempoAtleta2Segundos;
+
+   
+    int horas = tiempoTotalSegundos / 3600;
+    int minutos = (tiempoTotalSegundos % 3600) / 60;
+    int segundos = tiempoTotalSegundos % 60;
+
+  
+    std::cout << "Tiempo total: " << horas << " horas, " << minutos << " minutos, " << segundos << " segundos" << std::endl;
+
+    return 0;
+}

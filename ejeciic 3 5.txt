@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> distances = {50, 55, 57, 58, 60};
+    int maxDistance = 0;
+    vector<int> selectedDistances;
+    vector<int> selectedCities;
+
+    for (int i = 0; i < distances.size(); i++) {
+        for (int j = i + 1; j < distances.size(); j++) {
+            for (int k = j + 1; k < distances.size(); k++) {
+                int totalDistance = distances[i] + distances[j] + distances[k];
+                if (totalDistance <= 174 && totalDistance > maxDistance) {
+                    maxDistance = totalDistance;
+                    selectedDistances = {distances[i], distances[j], distances[k]};
+                    selectedCities = {i, j, k};
+                }
+            }
+        }
+    }
+
+    if (maxDistance > 0) {
+        cout << "Las ciudades seleccionadas son: ";
+        for (int i = 0; i < selectedCities.size(); i++) {
+            cout << char('A' + selectedCities[i]) << " ";
+        }
+        cout << endl;
+        cout << "Las distancias seleccionadas son: ";
+        for (int i = 0; i < selectedDistances.size(); i++) {
+            cout << selectedDistances[i] << " millas ";
+        }
+        cout << endl;
+        cout << "La distancia total es: " << maxDistance << " millas" << endl;
+    } else {
+        cout << "No es posible encontrar una combinación de ciudades dentro de los límites dados." << endl;
+    }
+
+    return 0;
+}

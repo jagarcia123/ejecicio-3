@@ -1,0 +1,47 @@
+#include <iostream>
+
+int main() {
+    int cantidadHijos, edadHijoMayor;
+    char estadoCivil;
+    double montoTotal = 0.0;
+
+    
+    std::cout << "Ingresa la cantidad de hijos: ";
+    std::cin >> cantidadHijos;
+
+  
+    std::cout << "Ingresa la edad del hijo mayor: ";
+    std::cin >> edadHijoMayor;
+
+   
+    std::cout << "Ingresa el estado civil de la madre ( c para casada, v para viuda): ";
+    std::cin >> estadoCivil;
+
+   
+    if (cantidadHijos <= 2) {
+        montoTotal += 70.0;
+    } else if (cantidadHijos <= 5) {
+        montoTotal += 90.0;
+    } else {
+        montoTotal += 120.0;
+    }
+
+  
+    for (int i = 0; i < cantidadHijos; i++) {
+        int edadHijo;
+        std::cout << "Ingresa la edad del hijo " << (i + 1) << ": ";
+        std::cin >> edadHijo;
+        if (edadHijo >= 6 && edadHijo <= 18) {
+            montoTotal += 10.0;
+        }
+    }
+
+    if (estadoCivil == 'v' || estadoCivil == 'V') {
+        montoTotal += 20.0;
+    }
+
+  
+    std::cout << "Monto mensual que recibirá la familia: S/. " << montoTotal << std::endl;
+
+    return 0;
+}

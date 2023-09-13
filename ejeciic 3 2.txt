@@ -1,0 +1,25 @@
+#include <iostream>
+
+int main() {
+    double cantidadPies, cantidadMetros;
+
+    std::cout << "Ingresa la cantidad en pies: ";
+    std::cin >> cantidadPies;
+
+    std::cout << "Ingresa la cantidad en metros: ";
+    std::cin >> cantidadMetros;
+
+    double sumaEnPulgadas = cantidadPies * 12;
+
+    double sumaEnYardas = cantidadPies / 3.0; 
+
+    double sumaEnMetros = cantidadMetros + (cantidadPies * 0.3048); // 
+
+    double sumaEnMillas = (cantidadMetros / 1609.34) + (cantidadPies / 5280.0);
+    std::cout << "Suma en pulgadas: " << sumaEnPulgadas << " pulgadas" << std::endl;
+    std::cout << "Suma en yardas: " << sumaEnYardas << " yardas" << std::endl;
+    std::cout << "Suma en metros: " << sumaEnMetros << " metros" << std::endl;
+    std::cout << "Suma en millas: " << sumaEnMillas << " millas" << std::endl;
+
+    return 0;
+}
